@@ -10,6 +10,9 @@ public class ChatRoomMessageList {
     private static final ChatRoomMessageList msgListChatRoom = new ChatRoomMessageList();
 
     private final List<Message> list = new ArrayList<Message>();
+    public List<Message> getList() {
+        return list;
+    }
 
     private final HashMap<String,String> mapChatRoomRegistr = new HashMap<String, String>();
 
@@ -46,13 +49,13 @@ public class ChatRoomMessageList {
     }
 
     public void deleteUser(String loginStr){
-        List<Message> tmpList=new ArrayList<Message>();
+
 
         mapChatRoomRegistr.remove(loginStr);
         mapChatRoomRegistrStatus.remove(loginStr);
 
-
-        //хотел при выходе из чат комнаты удалить и все сообщения пользователя, но подумал - путь будут :)
+//хотел при выходе из чат-комнаты удалить и все сообщения пользователя, но подумал - путь будут :)
+    //   List<Message> tmpList=new ArrayList<Message>();
        /* for (int i = 0; i <list.size() ; i++) {
          if(!list.get(i).getFrom().equals(loginStr)){
              System.out.println(list.get(i));
